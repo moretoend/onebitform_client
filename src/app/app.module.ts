@@ -1,19 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { routing } from './app.routing';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterializeModule } from 'ng2-materialize';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ChartsModule } from 'ng2-charts';
+import { RouterModule } from '@angular/router';
+import { routing } from './app.routing';
+import { HttpModule } from '@angular/http';
+import { Angular2TokenService } from 'angular2-token';
+
 import { FormsModule } from './forms/forms.module';
+import { UsersModule } from './users/users.module';
 import { AnswersModule } from './answers/answers.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+
+
 
 
 @NgModule({
@@ -21,20 +26,21 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
+    RouterModule,
+    FormsModule,
+    AnswersModule,
+    UsersModule,
+    routing,
+    BrowserAnimationsModule,
     MaterializeModule.forRoot(),
     ColorPickerModule,
     ChartsModule,
-    RouterModule,
-    routing,
-    FormsModule,
-    AnswersModule,
   ],
-  providers: [],
+  providers: [Angular2TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
