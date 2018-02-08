@@ -18,8 +18,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormService } from './shared/form.service';
-
-
+import { QuestionService } from './shared/question.service';
+import { AnswerService } from './shared/answer.service';
 
 
 @NgModule({
@@ -41,7 +41,7 @@ import { FormService } from './shared/form.service';
     ColorPickerModule,
     ChartsModule,
   ],
-  providers: [Angular2TokenService, FormService],
+  providers: [Angular2TokenService, FormService, QuestionService, AnswerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
