@@ -4,12 +4,12 @@
       <img src="/assets/images/logo.png" alt="">
     </a>
     <ul class="right">
-      <div *ngIf="_tokenService.currentUserData == null">            
+      <div *ngIf="_tokenService.currentUserData == null">
         <li><a href="#" routerLink="/login">Login</a></li>
-        <li><a href="#" routerLink="/register">Register</a></li>      
+        <li><a href="#" routerLink="/register">Register</a></li>
       </div>
-      <div *ngIf="_tokenService.currentUserData != null">            
-        <li><a href (click)="signOut()">Logout</a></li>          
+      <div *ngIf="_tokenService.currentUserData != null">
+        <li><a href (click)="signOut()">Logout</a></li>
       </div>
     </ul>
   </div>
