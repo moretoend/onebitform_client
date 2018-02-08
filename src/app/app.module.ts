@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { routing } from './app.routing';
 
 import { MaterializeModule } from 'ng2-materialize';
 import { ColorPickerModule } from 'ngx-color-picker';
@@ -27,8 +29,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MaterializeModule.forRoot(),
     ColorPickerModule,
     ChartsModule,
+    RouterModule,
+    routing,
     FormsModule,
-    AnswersModule
+    AnswersModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
