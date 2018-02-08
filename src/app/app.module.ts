@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FormService } from './shared/form.service';
 
 
 
@@ -40,7 +41,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ColorPickerModule,
     ChartsModule,
   ],
-  providers: [Angular2TokenService],
+  providers: [Angular2TokenService, FormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
