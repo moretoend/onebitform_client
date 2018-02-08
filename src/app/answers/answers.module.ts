@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule as CoreFormsModule } from '@angular/forms';
 
 import { AnswerListComponent } from './answer-list/answer-list.component';
 import { AnswerNewComponent } from './answer-new/answer-new.component';
@@ -10,7 +11,8 @@ import { IndividualDetailsComponent } from './shared/individual-details/individu
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    CoreFormsModule
   ],
   declarations: [
     AnswerListComponent,
