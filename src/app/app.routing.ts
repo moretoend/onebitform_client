@@ -23,9 +23,10 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'forms', component: FormListComponent, canActivate: [Angular2TokenService]},
-    { path: 'forms/:id', component: FormEditComponent, canActivate: [Angular2TokenService]},
     { path: 'forms/new', component: FormEditComponent, canActivate: [Angular2TokenService]},
+    { path: 'forms/:id', component: FormEditComponent, canActivate: [Angular2TokenService]},
     { path: 'answers', component: AnswerNewComponent, canActivate: [Angular2TokenService]},
+    { path: 'answers/:id/new', component: AnswerNewComponent, canActivate: [Angular2TokenService]},
     { path: 'answers/:id', component: AnswerListComponent, canActivate: [Angular2TokenService]},
     { path: '**', component: NotFoundComponent },
 ];
