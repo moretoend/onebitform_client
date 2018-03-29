@@ -49,11 +49,8 @@ export class AnswerNewComponent implements OnInit {
 
   onSubmit(f) {
     this.answerService.createAnswer(this.answer).subscribe(data => {
-      this.toastService.show('Answer send with sucess', 10000, 'green');
-      this.answer = new Answer({form_id: this.form.id});
-      for (const question of this.form.questions) {
-        this.answer.questions_answers.push(new QuestionsAnswer({question: question}));
-      }
+      this.toastService.show('Answer sent with sucess', 10000, 'green');
+      this.router.navigate(["/answer-confirmations"]);
     }, error => {
       this.toastService.show('Problem in send answer', 8000, 'red');
     });
