@@ -13,8 +13,6 @@ import { ActiveComponent } from './shared/active/active.component';
 import { FormFormComponent } from './form-form/form-form.component';
 import { QuestionListComponent } from './question-list/question-list.component';
 import { QuestionFormComponent } from './question-form/question-form.component';
-import { RequiredComponent } from './shared/required/required.component';
-
 
 
 @NgModule({
@@ -29,6 +27,6 @@ import { RequiredComponent } from './shared/required/required.component';
   exports: [
     FormListComponent
   ],
-  declarations: [FormListComponent, FormEditComponent, ActiveComponent, FormFormComponent, QuestionListComponent, QuestionFormComponent, RequiredComponent]
+  declarations: [FormListComponent, FormEditComponent, ActiveComponent, FormFormComponent, QuestionListComponent, QuestionFormComponent]
 })
 export class FormsModule { }
