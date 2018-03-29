@@ -22,6 +22,12 @@
                 </select>
               </mz-select-container>
           </div>
+          <div class="col m3">
+            <mz-checkbox-container>
+              <input mz-checkbox [label]="'Required'" type="checkbox" name="required" #required="ngModel" id="checkbox-required-{{ question.id }}"
+                     [(ngModel)]="question.required" />
+            </mz-checkbox-container>
+          </div>
         </div>
         <div class="row">
           <div class="col m3" *ngIf="question.id !== undefined">

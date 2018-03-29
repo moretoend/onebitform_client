@@ -21,30 +21,33 @@
               <div class="card-content">
                 <div class="row">
                   <div class="col m12">
-                    <p>{{ idx + 1 }} - {{ questions_answer.question.title }}</p>
+                    <p>{{ idx + 1 }} - {{ questions_answer.question.title }} <span *ngIf="questions_answer.question.required">*</span></p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col m4" *ngIf="questions_answer.question.kind == 'boolean'">
                     <div class="col m6">
                       <input name="options_{{ questions_answer.question.id }}" type="radio" id="yes_{{ questions_answer.question.id }}" [(ngModel)]="questions_answer.value"
-                        #value="ngModel" [value]="1" />
+                        #value="ngModel" [value]="1" [required]="questions_answer.question.required" />
                       <label for="yes_{{ questions_answer.question.id }}">Yes</label>
                     </div>
                     <div class="col m6">
                       <input name="options_{{ questions_answer.question.id }}" type="radio" id="no_{{ questions_answer.question.id }}" [(ngModel)]="questions_answer.value"
-                        #value="ngModel" [value]="0" />
+                        #value="ngModel" [value]="0" [required]="questions_answer.question.required" />
                       <label for="no_{{ questions_answer.question.id }}">No</label>
                     </div>
                   </div>
                   <div class="col m12" *ngIf="questions_answer.question.kind == 'short_text'">
-                    <input type="text" placeholder="Your Answer..." name="value" [(ngModel)]="questions_answer.value" #value="ngModel">
+                    <input type="text" placeholder="Your Answer..." name="value" [(ngModel)]="questions_answer.value" #value="ngModel"
+                           [required]="questions_answer.question.required" />
                   </div>
                   <div class="col m2" *ngIf="questions_answer.question.kind == 'integer'">
-                    <input type="number" placeholder="0" name="value" [(ngModel)]="questions_answer.value" #value="ngModel">
+                    <input type="number" placeholder="0" name="value" [(ngModel)]="questions_answer.value" #value="ngModel"
+                           [required]="questions_answer.question.required" />
                   </div>
                   <div class="col m12" *ngIf="questions_answer.question.kind == 'long_text'">
-                    <textarea placeholder="Your Question" class="materialize-textarea" name="value" [(ngModel)]="questions_answer.value" #value="ngModel">
+                    <textarea placeholder="Your Question" class="materialize-textarea" name="value" [(ngModel)]="questions_answer.value"
+                              #value="ngModel" [required]="questions_answer.question.required">
                     </textarea>
                   </div>
                 </div>
