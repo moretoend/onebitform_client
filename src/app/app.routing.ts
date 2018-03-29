@@ -14,6 +14,7 @@ import { AnswerListComponent } from './answers/answer-list/answer-list.component
 import { AnswerNewComponent } from './answers/answer-new/answer-new.component';
 import { LoginComponent } from './users/login/login.component';
 import { RegisterComponent } from './users/register/register.component';
+import { AnswerConfirmationComponent } from './answer-confirmation/answer-confirmation.component';
 
 
 
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     { path: 'answers', component: AnswerNewComponent, canActivate: [Angular2TokenService]},
     { path: 'answers/:id/new', component: AnswerNewComponent },
     { path: 'answers/:id', component: AnswerListComponent, canActivate: [Angular2TokenService]},
+    { path: 'answer-confirmations', component: AnswerConfirmationComponent },
     { path: '**', component: NotFoundComponent },
 ];
 
